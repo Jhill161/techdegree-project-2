@@ -17,9 +17,9 @@ FSJS project 2 - List Filter and Pagination
    will only be used inside of a function, then it can be locally 
    scoped to that function.
 ***/
-const list = document.querySelectorAll(".student-item");
+const studentList = document.querySelectorAll(".student-item");
 //const list = document.getElementsByClassName(".student-item");
-console.log(list);
+console.log(studentList);
 const itemsPerPage = 10;
 
 
@@ -41,11 +41,12 @@ function showPage (list, page) {
 let startIndex = (page * itemsPerPage) - itemsPerPage;
 let endIndex = page * itemsPerPage;
 for (let i = 0; i < list.length; i ++) {
-      if (list[i] >= startIndex && list[i] < endIndex) {
+      if (i >= startIndex && i <= endIndex) {
          list[i].style.display = '';                  
       } else list[i].style.display = 'none';
-      }
 
+      }
+      
    };
 
 
@@ -61,28 +62,32 @@ for (let i = 0; i < list.length; i ++) {
 function appendPageLinks (list) {
    const body = document.querySelector('.page');
    const createDiv = document.createElement('div');
-   const createButton = document.createElement('BUTTON');
    const createUl = document.createElement('ul');
    const createLi = document.createElement('li');
 
-// Div 'pagination class naming and appending
+// Div pagination class naming and appending
    createDiv.className = "pagination";
    body.appendChild(createDiv);
 
 // UL appending   
    createDiv.appendChild(createUl);
 
-// LI creation loop
+// LI creation loop, anchor creation, text content adding, and passing showPage
    
-   for (let i = 0; i < list.length / 10; i ++) {
+   for (let i = 0; i < studentList.length / 10; i ++) {
      //let li = document.createElement('li')
      let a = document.createElement('a');
-     let firstA = document.querySelector('a');
-     createLi.appendChild(createUl)
+     //let firstA = document.querySelector('a');
+     createUl.appendChild(createLi)
      createLi.appendChild(a);
-     firstA.className = "active";
+     document.querySelector('a').className = "active";
      a.href = "#";
      a.textContent = i + 1;
+     a.addEventListener('click', showPage(i)) 
+      for (let i = 0; i < studentList.length / 10; i ++) {
+         document.querySelector("a").classList.remove("active")
+      }
+     click.target.className = "active";
 
    }
 
