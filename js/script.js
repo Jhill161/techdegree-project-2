@@ -11,6 +11,17 @@ const studentList = document.querySelectorAll(".student-item");
 //console.log(studentList);
 const itemsPerPage = 10;
 
+/* searchbar
+let searchDiv = document.createElement('div')//.className = "student-search";
+let button = document.createElement('BUTTON');
+let input = document.createElement('input');
+document.querySelector('body').appendChild(searchDiv);
+searchDiv.className = "student-search";
+searchDiv.appendChild(input);
+input.placeholder = "Search for students..."
+searchDiv.appendChild(button);
+document.querySelector('button').textContent = "Search";
+*/
 
 function showPage (list, page) {
 let startIndex = (page * itemsPerPage) - itemsPerPage;
