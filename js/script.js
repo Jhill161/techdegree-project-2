@@ -49,6 +49,8 @@ const search = (text, list) => {
   console.log(storeNames);
 };
 
+
+// Event listener om submit button
 button.addEventListener("click", event => {
   event.preventDefault();
   text = input.value;
@@ -56,10 +58,12 @@ button.addEventListener("click", event => {
   console.log("Submit clicked" + " " + text);
 });
 
+// event listener keyup, for real time searching
 input.addEventListener("keyup", event => {
   text = input.value;
   search(text, studentList);
 });
+
 
 function showPage(list, page) {
   let startIndex = page * itemsPerPage - itemsPerPage;
