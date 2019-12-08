@@ -50,7 +50,7 @@ const search = (text, list) => {
 };
 
 
-// Event listener om submit button
+// Event listener on submit button
 button.addEventListener("click", event => {
   event.preventDefault();
   text = input.value;
